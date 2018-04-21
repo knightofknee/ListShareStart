@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.carlsisleproductions.listsharestart;
 
 import android.app.Application;
 
