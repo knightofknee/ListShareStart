@@ -63,10 +63,22 @@ export default class App extends React.Component {
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
         <Text style={styles.header}>Started from the Bottom</Text>
         <FlatList style={{width: '100%'}}
-          ItemSeparatorComponent={this.renderSeparator}
-          data={this.state.items}
-          renderItem={({ item }) => <Items {...item} />}
+            ItemSeparatorComponent={this.renderSeparator}
+            data={this.state.items}
+            renderItem={({ item }) => <Items {...item} />}
         />
+        <TextInput
+            style={{fontSize: 20}}
+            placeholder={'Type new Item here'}
+            value={this.state.textInput}
+            onChangeText={(text) => this.updateTextInput(text)}
+        />
+        <Button
+            style={{}}
+            title={'Add Item'}
+            disabled={!this.state.textInput.length}
+            onPress={() => this.addItem()}
+          />
       </View>
 
     );
