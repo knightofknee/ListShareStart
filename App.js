@@ -60,14 +60,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 2, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
-        <Text >Started from the Bottom</Text>
-      <FlatList style={{width: '100%'}}
-            ItemSeparatorComponent={this.renderSeparator
-      }
-            data={this.state.items}
-            renderItem={({ item }) => <Items {...item} />}
-          />
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
+        <Text style={styles.header}>Started from the Bottom</Text>
+        <FlatList style={{width: '100%'}}
+          ItemSeparatorComponent={this.renderSeparator}
+          data={this.state.items}
+          renderItem={({ item }) => <Items {...item} />}
+        />
       </View>
 
     );
@@ -83,11 +82,9 @@ const styles = StyleSheet.create({
     // alignItems: 'stretch',
     // paddingLeft: 30
   },
-  logo: {
-    height: 100,
-    marginBottom: 16,
-    marginTop: 80,
-    width: 100,
+  header: {
+    height: 20,
+    marginTop: 50,
   },
   welcome: {
     fontSize: 20,
