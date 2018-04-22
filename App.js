@@ -46,17 +46,29 @@ export default class App extends React.Component {
     loading: false,
  });
   }
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: "90%",
+          backgroundColor: "#CED0CE",
+          marginLeft: "5%"
+        }}
+      />
+    );}
 
   render() {
     return (
-
-      <FlatList
-      ItemSeparatorComponent={<View style={[style.separator, highlighted && {marginLeft: 0}]} />
+      <View style={{flex: 2, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center'}}>
+        <Text >Started from the Bottom</Text>
+      <FlatList style={{width: '100%'}}
+            ItemSeparatorComponent={this.renderSeparator
       }
             data={this.state.items}
             renderItem={({ item }) => <Items {...item} />}
           />
-
+      </View>
 
     );
   }
