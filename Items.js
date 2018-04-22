@@ -14,11 +14,11 @@ export default class Todo extends React.PureComponent {
           <TouchableHighlight
             onPress={() => this.toggleComplete()}
           >
-              <View style={{ flex: 1, width: 400, height: 48, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
-                  <View >
+              <View style={{ flex: 1, paddingLeft: 20, paddingRight: 2, height: 48, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <View style={{flex: 11}}>
                       <Text>{this.props.food}</Text>
                   </View>
-                  <View >
+                  <View style={{flex: 4}}>
                       {this.props.status && (
                           <Text>Got It!</Text>
                       )}
