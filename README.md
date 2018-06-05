@@ -1,3 +1,7 @@
+To run the app, npm start in one window, npm run ios in the other
+
+
+
 # React Native Firebase Starter<a href="https://rnfirebase.io"><img align="left" src="http://i.imgur.com/01XQL0x.png"></a>
 
 [![Backers on Open Collective](https://opencollective.com/react-native-firebase/backers/badge.svg)](#backers)
@@ -40,7 +44,7 @@ If you're only developing for one platform you can ignore the steps below that a
 - 3.2) **[iOS]** Place this file in the `ios/` directory of your project.
 - 3.3) **[Android]** Follow the `manually add firebase` to your app instructions [here](https://firebase.google.com/docs/android/setup#manually_add_firebase) to generate your `google-services.json` file if you haven't done so already - use the package name generated previously as your `Android package name`.
 - 3.4) Place this file in the `android/app/` directory of your project.
-  
+
 #### 4) Start your app
 
 - 4.1) Start the react native packager, run `yarn run start` or `npm start` from the root of your project.
@@ -48,7 +52,7 @@ If you're only developing for one platform you can ignore the steps below that a
 - 4.3) **[Android]** If you haven't already got an android device attached/emulator running then you'll need to get one running (make sure the emulator is with Google Play / APIs). When ready run `npm run android` or `yarn run android` from the root of your project.
 
 If all has gone well you'll see an initial screen like the one below.
-  
+
 ## Screenshots
 
 ![preview](https://i.imgur.com/4lG4HuS.png)
