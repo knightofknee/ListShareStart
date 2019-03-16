@@ -4,17 +4,23 @@ import { StyleSheet, List, Platform, Image, Text, View, ScrollView, FlatList, Bu
 import firebase from 'react-native-firebase';
 import Items from './Items';
 import ListMain from './ListMain'
+import AppRouter from './navigation/AppRouter';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.unsubscribe = null;
     this.ref = firebase.firestore().collection('items')
-    this.state = {
-      // firebase things?
-      loading: true
-    };
+    //echo
+    // this.state = {
+    //   // firebase things?
+    //   loading: true
+    // };
   }
+  state = {
+    isLoadingComplete: false,
+  };
+
   onLogin = () => {
     const { email, password } = this.state;
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -59,9 +65,26 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.loading) return null
-    if (this.state.user) return 'hii logged in'
-    return <ListMain/>
+    // test echo
+    // if (this.state.loading) return null
+    // if (this.state.user) return 'hii logged in'
+    // return <ListMain/>
+    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+      return (
+        <AppLoading
+          startAsync={this._loadResourcesAsync}
+          onError={this._handleLoadingError}
+          onFinish={this._handleFinishLoading}
+        />
+      );
+    } else {
+      return (
+        <View style={styles.container}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          <AppRouter />
+        </View>
+      );
+    }
   }
 }
 

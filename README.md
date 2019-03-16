@@ -91,3 +91,8 @@ Support this project by becoming a sponsor. Your logo will show up here with a l
 ### License
 
 - See [LICENSE](/LICENSE)
+
+
+to do next: run it to test it out, then look at the file structure and differences of what I have in this vs. what the template has
+I like storing screens in a folder, having screen in name too helps when reading the code
+
